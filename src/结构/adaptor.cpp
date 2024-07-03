@@ -3,6 +3,11 @@
 #include <algorithm>
 
 /**
+ * @brief       适配器，我理解就是，创建一个类专门用来使得当前类的接口对其它类可以兼容
+ *
+ */
+
+/**
  * The Target defines the domain-specific interface used by the client code.
  */
 class Target {

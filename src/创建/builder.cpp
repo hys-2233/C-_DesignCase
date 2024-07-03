@@ -2,6 +2,12 @@
 #include <string>
 #include <vector>
 
+/*
+生成器，可以按照你的需要生成一个对象，即使用相同代码，生成不同的对象
+
+可以加一个导演类，来指导生成器生成对象
+*/
+
 /**
  * It makes sense to use the Builder pattern only when your products are quite
  * complex and require extensive configuration.
@@ -23,7 +29,7 @@ class Product1{
                 std::cout << parts_[i] << ", ";
             }
         }
-        std::cout << "\n\n"; 
+        std::cout << "\n\n";
     }
 };
 
@@ -150,7 +156,7 @@ class Director{
     void BuildMinimalViableProduct(){
         this->builder->ProducePartA();
     }
-    
+
     void BuildFullFeaturedProduct(){
         this->builder->ProducePartA().ProducePartB().ProducePartC();
     }
@@ -169,14 +175,14 @@ void ClientCode(Director& director)
     ConcreteBuilder1* builder = new ConcreteBuilder1();
     director.set_builder(builder);
     // 导演类相当于封装了一种构建模式，还是调用builder去做具体的构建
-    std::cout << "Standard basic product:\n"; 
+    std::cout << "Standard basic product:\n";
     director.BuildMinimalViableProduct();
-    
+
     Product1* p= builder->GetProduct();
     p->ListParts();
     delete p;
 
-    std::cout << "Standard full featured product:\n"; 
+    std::cout << "Standard full featured product:\n";
     director.BuildFullFeaturedProduct();
 
     p= builder->GetProduct();
@@ -197,5 +203,5 @@ int main(){
     Director* director= new Director();
     ClientCode(*director);
     delete director;
-    return 0;    
+    return 0;
 }

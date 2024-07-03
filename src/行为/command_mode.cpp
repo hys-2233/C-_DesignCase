@@ -5,6 +5,9 @@
 /*
 * 把命令传入到调用者里面，然后调用者调用这个命令，调用者使用内部的成员变量承载变量，所以
 * 可以直接在调用者内部调用
+
+* 一个发送者， 一个接受者， 发送者需要有命令的成员变量，然后调用者调用这个命令，命令
+* 内部调用接受者的方法，命令只有一个执行接口，具体的执行命令要在外部进行声明
 */
 /**
  * The Command interface declares a method for executing a command.
@@ -54,6 +57,12 @@ class ComplexCommand : public Command {
    * @var Receiver
    */
  private:
+  /**
+   * @brief       这里可以使用unordered_map去解释接受所有的命令参数，然后将其映射到
+   *              某个具体的receiver上去执行，
+   *
+   */
+
   Receiver *receiver_;
   /**
    * Context data, required for launching the receiver's methods.

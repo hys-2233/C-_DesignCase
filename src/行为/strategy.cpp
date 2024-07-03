@@ -5,6 +5,8 @@
 #include <string_view>
 #include <memory>
 /*
+ * 对不同的上下文设置一个策略接口，然后在上下文中设置一个策略成员变量，然后在上下文中
+ * 调用策略的方法，这样就可以实现不同的上下文调用不同的策略
  * The Strategy interface declares operations common to all supported versions
  * of some algorithm.
  *

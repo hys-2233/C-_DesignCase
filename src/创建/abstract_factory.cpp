@@ -4,6 +4,17 @@
  * Each distinct product of a product family should have a base interface. All
  * variants of the product must implement this interface.
  */
+
+/*
+抽象工厂无需提供具体类，是在工厂模式基础上又抽象了一层
+
+抽象工厂模式就是构建一个创建者类，这个创建者类的子类来具体实现创建类型，
+也就是说把构建一个类的实例的过程封装起来，这样子就可以创建复杂的多个对象
+
+创建新产品的时候，只需要添加具体工厂类和具体产品类，而不需要改客户端代码
+符合开闭原则(对扩展开放，对修改关闭)
+*/
+
 class BlackAnimals {
  public:
   virtual ~BlackAnimals(){};

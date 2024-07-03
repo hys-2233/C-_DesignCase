@@ -1,6 +1,7 @@
 /**
  * Observer Design Pattern
- *
+ * 观察者模式，就是在接受者那里创建一个观察者队列，一个对象发生变化的时候，通知所有的观察者，
+ * 然后观察者进行相应的操作
  * Intent: Lets you define a subscription mechanism to notify multiple objects
  * about any events that happen to the object they're observing.
  *
